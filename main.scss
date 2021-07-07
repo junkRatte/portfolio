@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+
+$color-primary: #eaeaeaea;
+$color-secondary: #fff;
+
+$color-primary-text: black;
+$color-secondary-text: #4b5156;
+
+$color-red: #FE3232;
+
+$color-border: #c1c1c1c1;
+
+$preview-bg: rgba(251, 249, 243, 0.8);
+
+$button-color: black;
+
+$themeDotBorder: #24292e;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body * {
+    transition: 0.3s;
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+    color: $color-primary-text;
+    font-family: 'Russo One', sans-serif;
+    font-weight: 500;
+}
+
+p, li, span, label, input, textarea {
+    color: $color-secondary-text;
+    font-family: 'Roboto Mono', monospace;
+}
+
+h1 {font-size: 56px;}
+h2 {font-size: 36px;}
+h3 {font-size: 28px;}
+h4 {font-size: 24px;}
+h5 {font-size: 20px;}
+h6 {font-size: 16px;}
+
+a {
+    text-decoration: none;
+    color: #17a2b8;
+    font-family: 'Russo One', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+.style-1 {
+    background-color: $color-primary;
+    border-bottom: 1px solid $color-border;
+}
+
+.style-2 {
+    background-color: $color-secondary;
+    border-bottom: 1px solid $color-border;
+    padding-top: 50px;
+}
+
+.main-container {
+    width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+/*  */
+
+/* greeting */
+.greeting-wrapper {
+    display: grid;
+    place-items: center;
+    min-height: 10em;
+}
+
+
+.intro-wrapper {
+    background-color: $color-secondary;
+    border: 1px solid $color-border;
+    border-radius: 5px 5px 0 0;
+
+    box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3em 30em;
+    grid-template-areas: 
+        'nav-wrapper nav-wrapper'
+        'left-column right-column'
+    ;
+
+    .nav-wrapper {
+        grid-area: nav-wrapper;
+        border-bottom: 1px solid $color-border;
+        border-radius: 5px 5px 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $color-primary;
+
+        .dots-wrapper {
+            display: flex;
+            padding: 10px;
+
+            .browser-dot {
+                background-color: black;
+                height: 15px;
+                width: 15px;
+                border-radius: 50%;
+                margin: 5px;
+                box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+            }
+
+            #dot {
+                background-color: $color-red;
+            }
+        }
+
+        #navigation {
+            margin: 0;
+            padding:  10px;
+
+            li {
+                display: inline-block;
+                margin: 0 5px;
+
+                i {
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+
+    .left-column {
+        grid-area: left-column;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        #theme-options-wrapper {
+            display: flex;
+
+            .theme-dot {
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+                box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+                cursor: pointer;
+                margin: 5px;
+                border: 2px solid $themeDotBorder;
+
+                &:hover {
+                    border-width: 5px;
+                }
+            }
+
+            #light-mode {
+                background-color: #fff;
+            }
+            #blue-mode {
+                background-color: #192734;
+            }
+        }
+    }
+
+    .right-column {
+        grid-area: right-column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 0;
+
+        .preview {
+            width: 300px;
+            border: 1.5px solid #17a2b8;
+            padding: 15px;
+            background-color: $preview-bg;
+            position: relative;
+
+            .corner {
+                width: 9px;
+                height: 9px;
+                border-radius: 50%;
+                border: 1.5px solid #17a2b8;
+                background-color: #fff;
+                position: absolute;
+            }
+
+            #corner-tl {
+                top: -5px;
+                left: -5px;
+            }
+            #corner-tr {
+                top: -5px;
+                right: -5px;
+            }
+            #corner-br {
+                bottom: -5px;
+                right: -5px;
+            }
+            #corner-bl {
+                bottom: -5px;
+                left: -5px;
+            }
+        }
+    }
+}
+/* greeting end */
+
+/* about */
+.about-wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .about-me {
+        width: 50%;
+
+        i {
+            font-size: 20px;
+        }
+    }
+}
+/* about end */
+
+/* projects */
+.post-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 320px);
+    gap: 20px;
+    justify-content: space-between;
+    padding-top: 50px;
+
+    .post {
+        border: 1px solid $color-border;
+        box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+
+        &-preview {
+            background-color: #fff;
+            padding: 15px;
+        }
+
+        &-title {
+            color: #000;
+        }
+
+        &-intro {
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .thumbnail {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+            padding: 20px;
+        }
+    }
+}
+/* projects end */
+
+
+
+
+
+
+
+/* media */
+@media only screen and (max-width: 1200px) {
+    .main-container {
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .intro-wrapper {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            'nav-wrapper'
+            'left-column'
+            'right-column'
+        ;
+    }
+    
+}
